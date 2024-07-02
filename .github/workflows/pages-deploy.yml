@@ -46,9 +46,7 @@ jobs:
           bundler-cache: true
 
       - name: Build site
-        run: bundle exec jekyll s -d "_site${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: "production"
+        run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
